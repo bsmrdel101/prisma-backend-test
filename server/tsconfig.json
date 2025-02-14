@@ -1,14 +1,15 @@
 {
   "compilerOptions": {
-    "target": "ES2016",
-    "module": "CommonJS",
-    "outDir": "out",
-    "rootDir": "src",
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
+    "target": "ES6",
+    "allowJs": true,
+    "skipLibCheck": true,
     "strict": true,
-    "strictNullChecks": false,
-    "skipLibCheck": true
+    "esModuleInterop": true,
+    "module": "CommonJS",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "outDir": "dist"
   },
-  "include": ["src"]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
 }

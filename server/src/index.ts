@@ -1,19 +1,13 @@
-import { PrismaClient } from '@prisma/client';
+import express from "express";
+import { attachMiddlewares } from "./core/attach-middlewares";
+import { attachRoutes } from "./core/attach-routes";
 
-const prisma = new PrismaClient();
+const app = express();
+attachMiddlewares(app);
+attachRoutes(app);
 
 
-async function main() {
-  const allUsers = await prisma.users.findMany();
-  console.log(allUsers);
-}
-
-main()
-  .then(async () => {
-    await prisma.$disconnect()
-  })
-  .catch(async (e) => {
-    console.error(e)
-    await prisma.$disconnect()
-    process.exit(1)
-  });
+const PORT = process.env.PORT || 8090;
+app.listen(PORT, () => {
+  console.log(`Server is up on http://localhost:${PORT}`);
+});
