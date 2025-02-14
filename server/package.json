@@ -1,0 +1,20 @@
+{
+  "name": "prisma-backend-test",
+  "version": "1.0.0",
+  "scripts": {
+    "db:sync": "prisma migrate dev --name init",
+    "db:sync-push": "npx prisma db push",
+    "db:format": "prisma format",
+    "db:gui": "prisma studio",
+    "start": "tsc && node out/"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.4",
+    "prisma": "^6.3.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.3.1"
+  }
+}
