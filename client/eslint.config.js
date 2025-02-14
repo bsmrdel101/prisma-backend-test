@@ -17,7 +17,12 @@ export default ts.config(
 	    ...globals.browser,
 	    ...globals.node
 	  }
-	}
+    },
+    rules: {
+      "no-undef": "off",
+      "semi": [2, "always"],
+      "indent": ["error", 2]
+    }
   },
   {
     files: ["**/*.svelte"],
@@ -26,6 +31,6 @@ export default ts.config(
 	  parserOptions: {
 	    parser: ts.parser
 	  }
-	}
+    }
   }
 );
