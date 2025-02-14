@@ -24,8 +24,12 @@
 </form>
 
 <h1>Users</h1>
-<ul>
-  {#each users as user}
-    <li>{ user.displayName }</li>
-  {/each}
-</ul>
+{#if users.length > 0}
+  <ul>
+    {#each users as user}
+      <li>{ user.displayName }</li>
+    {/each}
+  </ul>
+{:else}
+  <p>Loading...</p>
+{/if}
